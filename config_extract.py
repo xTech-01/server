@@ -24,6 +24,12 @@ COOKIE="exp_pref=EUR; seen_uk=1"
 tori_url_1 = 'https://www.tori.fi/koko_suomi?q='
 tori_proxy_url_1 = '/koko_suomi?q='
 
+# products = ['tuuletin', 'ilmastointi', 'renkaat']
+products = ['tuuletin']
+synonym = ['ilmastointilaite', 'ilmastointilaitteet', 'ilmastointilaitetta', 'ilmastointilaitteita', 'ilmastointilaitteiden', 'ilmastointilaitteeseen', 'ilmastointilaitteeseesi', 'ilmastointilaitteeseenne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteelta', 'ilmastointilaitteeltasi', 'ilmastointilaitteeltanne']
+# products = {
+#     'tuuletin': '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th',
+# }
 # ------TODO------
 # urls for different categories
 tori_url_ilmastointi = '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th'

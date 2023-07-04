@@ -2,6 +2,7 @@ import sys
 import argparse
 import logging
 
+from config_extract import products
 import extract, transform, load
 
 
@@ -9,10 +10,13 @@ import extract, transform, load
 def get_options(argv=None):
     parser = argparse.ArgumentParser(description='ETL Tori Gigantti S K Low Price Data')
     # python3 app.py -v T
-    # python3 app.py -v T -p T -pr T
+    # python3 app.py -v T -l T -pr T -db T -p T
     parser.add_argument('-v', '--verbose', default=False, type=bool, help='verbose output')
     parser.add_argument('-p', '--production', default=False, type=bool, help='production mode')
+    parser.add_argument('-l', '--live', default=False, type=bool, help='live mode')
     parser.add_argument('-pr', '--proxy', default=False, type=bool, help='use proxy')
+    parser.add_argument('-db', '--db', default=False, type=bool, help='connect to database')
+    parser.add_argument('-pd', '--product', default='all', nargs='+', type=str, help='products to search for')
 
     return parser.parse_args(argv)
 
@@ -26,19 +30,35 @@ logger = logging.getLogger(__name__)
 logger.info(args)
 logger.info('Starting')
 
-def etl():
+try:
+    if args.product == 'all':
+        logger.info('all products')
+    elif len(args.product) >= 1:
+        logger.info('multiple products')
+        products = args.product
+    logger.info(products)
+except Exception as e:
+    logger.error(e)
+    logger.error('no product specified in args')
+    sys.exit(1)
+
+def etl(product):
     production = args.production
+    live = args.live
     proxy = args.proxy
-    e = extract.extract(proxy, logger)
+    db = args.db
+    e = extract.extract(live, proxy, product, logger)
     if e is None:
         logger.error('no data from extraction')
         return
     else: 
         logger.info('data extracted')
-        t = transform.transform(e, logger)
-        load.load(t, production, logger)
+        t = transform.transform(product, e, logger)
+        load.load(t, db, production, logger)
 
 
 
 if __name__ == '__main__':
-    etl()
+    for product in products:
+        logger.info('product: ' + product)
+        etl(product)

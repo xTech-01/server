@@ -1,3 +1,4 @@
+import sys
 import requests
 from bs4 import BeautifulSoup
 
@@ -6,66 +7,68 @@ import time
 
 from config_extract import proxy_list, USER_AGENTS, COOKIE, tori_url_1, tori_proxy_url_1, tori_url_tuuletin
 
-# import logging
-# logger = logging.getLogger(__name__)
-# logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 
+def extract(live, proxy, product, logger):
+    logger.info('Extracting data')
 
-def extract(proxy, logger):
-
-    # products = ['tuuletin', 'ilmastointi', 'renkaat']
-    products = ['tuuletin']
-    synonym = ['ilmastointilaite', 'ilmastointilaitteet', 'ilmastointilaitetta', 'ilmastointilaitteita', 'ilmastointilaitteiden', 'ilmastointilaitteeseen', 'ilmastointilaitteeseesi', 'ilmastointilaitteeseenne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteelta', 'ilmastointilaitteeltasi', 'ilmastointilaitteeltanne']
-
-
-    for product in products:
-        logger.info('extracting data for: ' + product)
+    if product is None:
+        logger.error('no product specified in extract')
+        return
+    else:
         try:
-            headers = {
-                'User-Agent': choice(USER_AGENTS),
-                # 'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,*/*;q=0.8',
-                # 'Cookie': COOKIE,
-                # 'Pragma': 'no-cache',
-            }
+            if live:
+                logger.info('live mode')
 
-            # -----TODO-----
-            # if tori
-            url = tori_url_1 + product + tori_url_tuuletin
-            logger.info('making request to: ' + url)
-
-
-            if not proxy:
-                logger.info('not using proxy')
-                response = requests.get(url, headers=headers)
-            else:
-                logger.info('using proxy')
-                data = {
-                "hostname": "www.tori.fi",
-                "path": tori_proxy_url_1 + product + tori_url_tuuletin,
-                "method": "GET",
-                "port": "443",
-                "headers": headers,
+                headers = {
+                    'User-Agent': choice(USER_AGENTS),
+                    # 'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,*/*;q=0.8',
+                    # 'Cookie': COOKIE,
+                    # 'Pragma': 'no-cache',
                 }
-                logger.info('proxy data: ' + str(data))
-                proxy = choice(proxy_list)
-                response = requests.post(proxy, json=data)
 
-            logger.info('response received, status code: ' + str(response.status_code))
+                # -----TODO-----
+                # if tori
+                url = tori_url_1 + product + tori_url_tuuletin
+                logger.info('making request to: ' + url)
 
-            logger.info('html parsing...')
-            soup = BeautifulSoup(response.content, 'html.parser')
-            data = soup.find_all('p', class_='list_price ineuros')
-            # logger.info(f'data: {data}')
 
-            prices = [price.text for price in data]
-            logger.info(f'prices: {prices}')
-            time.sleep(5)
+                if not proxy:
+                    logger.info('not using proxy')
+                    response = requests.get(url, headers=headers)
+                else:
+                    logger.info('using proxy')
+                    data = {
+                    "hostname": "www.tori.fi",
+                    "path": tori_proxy_url_1 + product + tori_url_tuuletin,
+                    "method": "GET",
+                    "port": "443",
+                    "headers": headers,
+                    }
+                    logger.info('proxy data: ' + str(data))
+                    proxy = choice(proxy_list)
+                    response = requests.post(proxy, json=data)
 
-            outFile = open('prices_extract.txt', 'w')
-            outFile.write(str(prices))
-            outFile.close()
-            logger.info('extracted data written to file')
+                logger.info('response received, status code: ' + str(response.status_code))
+                logger.info('html parsing...')
+                soup = BeautifulSoup(response.content, 'html.parser')
+                data = soup.find_all('p', class_='list_price ineuros')
+                # logger.info(f'data: {data}')
 
+                prices = [price.text for price in data]
+                logger.info(f'prices: {prices}')
+                '''
+                outFile = open('prices_extract.txt', 'w')
+                outFile.write(str(prices))
+                outFile.close()
+                logger.info('extracted data written to file')
+                '''
+                time.sleep(5)
+            else:
+                logger.info('reading data from file')
+                with open('prices_extract.txt', 'r') as file:
+                    prices = file.read()
+                    logger.info(f'prices: {prices}')
+                    file.close()
             return prices
         except Exception as e:
             logger.error('error making request: ' + str(e))
