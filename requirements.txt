@@ -3,4 +3,5 @@ beautifulsoup4=4.12.2
 
 # !!!upgrade pip first
 psycopg2-binary=2.9.6
-```
+
+elasticsearch=8.8.2

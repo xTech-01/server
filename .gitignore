@@ -1,5 +1,11 @@
+# env
 .venv
 
+# cache
 .pyc
 __pycache__/
 
+# es
+elasticsearch-7.17.11/
+elasticsearch-7.17.11-darwin-x86_64.tar.gz
+elasticsearch-7.17.11-darwin-x86_64.tar.gz.sha512
