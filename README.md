@@ -4,11 +4,13 @@
 
 # run es:
 ```
-cd /elasticsearch-7.17.11/
+cd elasticsearch-7.17.11/
     bin/elasticsearch
-        curl -X GET "http://localhost:9200"
-            cmd+./ctrl+c to stop
-            ps -ef | grep elasticsearch kill <pid>
+        curl -X GET "http://localhost:9200" -u "elastic:password"
+            curl -X GET "http://localhost:9200/_cat/indices" -u "elastic:password"
+                curl -X GET "http://localhost:9200/new_index_js/_search" -u "elastic:password"
+                    cmd+./ctrl+c to stop
+                    ps -ef | grep elasticsearch kill <pid>
 ```
 
 # enable security:

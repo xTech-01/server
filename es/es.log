@@ -1,0 +1,42 @@
+error: Error indexing document: security_exception
+	Root causes:
+		security_exception: missing authentication credentials for REST request [/new_index_js/_doc] {"meta":{"body":{"error":{"header":{"WWW-Authenticate":"Basic realm=\"security\" charset=\"UTF-8\""},"reason":"missing authentication credentials for REST request [/new_index_js/_doc]","root_cause":[{"header":{"WWW-Authenticate":"Basic realm=\"security\" charset=\"UTF-8\""},"reason":"missing authentication credentials for REST request [/new_index_js/_doc]","type":"security_exception"}],"type":"security_exception"},"status":401},"headers":{"content-length":"415","content-type":"application/json; charset=UTF-8","www-authenticate":"Basic realm=\"security\" charset=\"UTF-8\""},"meta":{"aborted":false,"attempts":0,"connection":{"headers":{},"id":"http://localhost:9200/","status":"alive","url":"http://localhost:9200/"},"context":null,"name":"elasticsearch-js","request":{"id":1,"options":{},"params":{"body":"{\"title\":\"Sample Document\",\"content\":\"This is a test document.\"}","headers":{"accept":"application/vnd.elasticsearch+json; compatible-with=8","content-length":"64","content-type":"application/vnd.elasticsearch+json; compatible-with=8","user-agent":"elasticsearch-js/8.9.0 (darwin 21.6.0-x64; Node.js 18.16.0; Transport 8.3.2)","x-elastic-client-meta":"es=8.9.0,js=18.16.0,t=8.3.2,hc=18.16.0"},"method":"POST","path":"/new_index_js/_doc","querystring":""}}},"statusCode":401,"warnings":null},"name":"ResponseError","stack":"ResponseError: security_exception\n\tRoot causes:\n\t\tsecurity_exception: missing authentication credentials for REST request [/new_index_js/_doc]\n    at SniffingTransport.request (/Users/stella/project_x/clients/xtech/server/es/node_modules/@elastic/transport/lib/Transport.js:479:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Client.IndexApi [as index] (/Users/stella/project_x/clients/xtech/server/es/node_modules/@elastic/elasticsearch/lib/api/api/index.js:51:12)\n    at async indexDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:20:22)"}
+error: Error indexing document: Cannot read properties of undefined (reading '_id') {"stack":"TypeError: Cannot read properties of undefined (reading '_id')\n    at indexDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:28:60)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: Error indexing document: Cannot read properties of undefined (reading '_id') {"stack":"TypeError: Cannot read properties of undefined (reading '_id')\n    at indexDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:28:60)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Document indexed successfully:
+error: Error indexing document: Cannot read properties of undefined (reading '_id') {"stack":"TypeError: Cannot read properties of undefined (reading '_id')\n    at indexDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:31:44)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Document indexed successfully:
+info: Body: undefined
+info: Document indexed successfully:
+info: Body: undefined
+error: Error searching documents: Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at searchDocuments (file:///Users/stella/project_x/clients/xtech/server/es/es.js:51:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+info: body: undefined
+error: Error searching documents: Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at searchDocuments (file:///Users/stella/project_x/clients/xtech/server/es/es.js:53:46)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: body[indexName]
+error: Error getting index info: Cannot read properties of undefined (reading 'new_index_js') {"stack":"TypeError: Cannot read properties of undefined (reading 'new_index_js')\n    at getIndexInfo (file:///Users/stella/project_x/clients/xtech/server/es/es.js:37:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: body
+info: undefined
+info: body[indexName]
+error: Error getting index info: Cannot read properties of undefined (reading 'new_index_js') {"stack":"TypeError: Cannot read properties of undefined (reading 'new_index_js')\n    at getIndexInfo (file:///Users/stella/project_x/clients/xtech/server/es/es.js:39:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: body
+info: undefined
+info: body[indexName]
+error: Error getting index obj: Cannot read properties of undefined (reading 'new_index_js') {"stack":"TypeError: Cannot read properties of undefined (reading 'new_index_js')\n    at getIndexObj (file:///Users/stella/project_x/clients/xtech/server/es/es.js:40:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Index obj is null
+info: Index successfully deleted:
+info: undefined
+info: Index successfully created:
+info: Document indexed successfully:
+info: Body: undefined
+info: Document indexed successfully:
+info: Body: undefined
+info: Search Results:
+info: body: undefined
+error: Error searching documents: Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at searchDocuments (file:///Users/stella/project_x/clients/xtech/server/es/es.js:97:46)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+error: Error searching documents: Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:31)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}

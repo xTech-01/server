@@ -1,0 +1,7 @@
+{
+"type": "module",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.9.0",
+    "winston": "^3.10.0"
+  }
+}
