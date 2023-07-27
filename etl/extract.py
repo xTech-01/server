@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 from random import choice
 import time
 
-from config_extract import proxy_list, USER_AGENTS, COOKIE, tori_url_1, tori_proxy_url_1, tori_url_tuuletin
+from config_extract import (proxy_list, USER_AGENTS, COOKIE, 
+                            tori_url_1, tori_proxy_url_1, tori_url_tuuletin,
+                            giantti_url_1, giantti_url_ilmastointi)
 
 
 def extract(live, proxy, product, logger):
@@ -28,7 +30,7 @@ def extract(live, proxy, product, logger):
 
                 # -----TODO-----
                 # if tori
-                url = tori_url_1 + product + tori_url_tuuletin
+                url = giantti_url_1 + product + tori_url_tuuletin
                 logger.info('making request to: ' + url)
 
 
@@ -37,13 +39,23 @@ def extract(live, proxy, product, logger):
                     response = requests.get(url, headers=headers)
                 else:
                     logger.info('using proxy')
-                    data = {
+
+                    data_tori = {
                     "hostname": "www.tori.fi",
                     "path": tori_proxy_url_1 + product + tori_url_tuuletin,
                     "method": "GET",
                     "port": "443",
                     "headers": headers,
                     }
+
+                    data = {
+                    "hostname": "www.gigantti.fi",
+                    "path": giantti_url_1 + product + giantti_url_ilmastointi,
+                    "method": "GET",
+                    "port": "443",
+                    "headers": headers,
+                    }
+
                     logger.info('proxy data: ' + str(data))
                     proxy = choice(proxy_list)
                     response = requests.post(proxy, json=data)
@@ -51,8 +63,9 @@ def extract(live, proxy, product, logger):
                 logger.info('response received, status code: ' + str(response.status_code))
                 logger.info('html parsing...')
                 soup = BeautifulSoup(response.content, 'html.parser')
-                data = soup.find_all('p', class_='list_price ineuros')
-                # logger.info(f'data: {data}')
+                data_tori = soup.find_all('p', class_='list_price ineuros')
+                data = soup.find_all('span', class_='price')
+                logger.info(f'data: {data}')
 
                 prices = [price.text for price in data]
                 logger.info(f'prices: {prices}')

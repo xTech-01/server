@@ -40,3 +40,131 @@ info: Search Results:
 error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
 info: Search Results:
 error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:96:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+error: Error searching : index_exists is not defined {"stack":"ReferenceError: index_exists is not defined\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:87:22)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Search Results:
+info: Index new_index_js exists
+info: Search Results:
+info: Index new_index_js exists
+info: Search Results:
+error: Error getting index obj: id is not defined {"stack":"ReferenceError: id is not defined\n    at getIndexObj (file:///Users/stella/project_x/clients/xtech/server/es/es.js:36:40)\n    at start_app (file:///Users/stella/project_x/clients/xtech/server/es/es.js:134:5)\n    at file:///Users/stella/project_x/clients/xtech/server/es/es.js:151:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)"}
+info: Index new_index_js exists
+info: Search Results:
+info: undefined
+info: undefined
+error: Error searching : Cannot read properties of undefined (reading 'hits') {"stack":"TypeError: Cannot read properties of undefined (reading 'hits')\n    at search (file:///Users/stella/project_x/clients/xtech/server/es/es.js:107:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+info: Index new_index_js exists
+info: Search Results:
+info: [object Object]
+info: hits: [object Object],[object Object]
+info: Index new_index_js exists
+info: Search Results:
+info: {"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}},{"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}]}}
+info: hits: [object Object],[object Object]
+info: Index new_index_js exists
+info: Search Results:
+info: {"took":1,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}},{"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}]}}
+info: hits: [{"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}},{"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}]
+info: obj:
+info: {"aliases":{},"mappings":{"properties":{"content":{"type":"text"},"title":{"type":"text"}}},"settings":{"index":{"routing":{"allocation":{"include":{"_tier_preference":"data_content"}}},"number_of_shards":"1","provided_name":"new_index_js","creation_date":"1690405939147","number_of_replicas":"1","uuid":"Dw4PPCPqR6GN_gXsNF3VBg","version":{"created":"7171199"}}}}
+info: {"properties":{"content":{"type":"text"},"title":{"type":"text"}}}
+info: Index obj:
+info: [object Object]
+info: Index new_index_js exists
+info: Search Results:
+info: hits: [{"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}},{"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}]
+info: Index new_index_js exists
+info: obj mappings:
+info: {"properties":{"content":{"type":"text"},"title":{"type":"text"}}}
+info: Index obj:
+info: {"aliases":{},"mappings":{"properties":{"content":{"type":"text"},"title":{"type":"text"}}},"settings":{"index":{"routing":{"allocation":{"include":{"_tier_preference":"data_content"}}},"number_of_shards":"1","provided_name":"new_index_js","creation_date":"1690405939147","number_of_replicas":"1","uuid":"Dw4PPCPqR6GN_gXsNF3VBg","version":{"created":"7171199"}}}}
+info: Search Results:
+info: hits: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: obj mappings:
+info: {"properties":{"content":{"type":"text"},"title":{"type":"text"}}}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: Document indexed successfully:
+info: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":2,"_primary_term":2}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+error: Error updating document: Cannot read properties of undefined (reading 'toString') {"stack":"TypeError: Cannot read properties of undefined (reading 'toString')\n    at Client.UpdateApi [as update] (/Users/stella/project_x/clients/xtech/server/es/node_modules/@elastic/elasticsearch/lib/api/api/update.js:49:106)\n    at updateDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:35:34)\n    at start_app (file:///Users/stella/project_x/clients/xtech/server/es/es.js:153:5)\n    at file:///Users/stella/project_x/clients/xtech/server/es/es.js:163:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)"}
+info: Document indexed successfully:
+info: {"_index":"new_index_js","_type":"_doc","_id":"1","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":3,"_primary_term":2}
+error: Error updating document: Cannot read properties of undefined (reading 'toString') {"stack":"TypeError: Cannot read properties of undefined (reading 'toString')\n    at Client.UpdateApi [as update] (/Users/stella/project_x/clients/xtech/server/es/node_modules/@elastic/elasticsearch/lib/api/api/update.js:49:106)\n    at updateDocument (file:///Users/stella/project_x/clients/xtech/server/es/es.js:35:34)\n    at start_app (file:///Users/stella/project_x/clients/xtech/server/es/es.js:154:5)\n    at file:///Users/stella/project_x/clients/xtech/server/es/es.js:164:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)"}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world"}}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world"}}
+info: get query results:
+info: {"query":{"match":{"title":"ai"}}}
+info: obj mappings:
+info: {"properties":{"content":{"type":"text"},"title":{"type":"text"}}}
+info: doc:
+info: {"_index":"new_index_js","_type":"_doc","_id":"1","_version":1,"_seq_no":3,"_primary_term":2,"found":true,"_source":{"title":"ai","content":"1 hello world"}}
+info: Document updated successfully:
+info: {"_index":"new_index_js","_type":"_doc","_id":"1","_version":2,"result":"updated","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":4,"_primary_term":2}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"hi there","content":"1 hello world","news":"new vibes"}}
+info: get query results:
+info: {"query":{"match":{"title":"ai"}}}
+info: Document updated successfully:
+info: {"_index":"new_index_js","_type":"_doc","_id":"1","_version":3,"result":"updated","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":5,"_primary_term":2}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}
+info: get query results:
+info: {"took":21,"timed_out":false,"_shards":{"total":3,"successful":3,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":1.6943598,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"1","_score":1.6943598,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}]}}
+info: Index new_index_js exists
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_score":1,"_source":{"title":"Sample Document","content":"This is a test document."}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}
+info: Document successfully deleted:
+info: {"_index":"new_index_js","_type":"_doc","_id":"068MlIkBI1YMj3GGaU_J","_version":2,"result":"deleted","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":6,"_primary_term":2}
+info: get query results:
+info: {"took":5,"timed_out":false,"_shards":{"total":3,"successful":3,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":1.4599355,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"1","_score":1.4599355,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}]}}
+info: Document successfully deleted:
+info: {"_index":"new_index_js","_type":"_doc","_id":"1K8MlIkBI1YMj3GG2k-Z","_version":2,"result":"deleted","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":7,"_primary_term":2}
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_score":1,"_source":{"title":"hi there","content":"hello world"}}
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}
+info: get query results:
+info: {"took":3,"timed_out":false,"_shards":{"total":3,"successful":3,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":0.8025915,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"1","_score":0.8025915,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}]}}
+info: Document successfully deleted:
+info: {"_index":"new_index_js","_type":"_doc","_id":"ypBAmIkBHSnjRtQvAkbH","_version":2,"result":"deleted","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":8,"_primary_term":2}
+info: Search Results:
+info: doc: {"_index":"new_index_js","_type":"_doc","_id":"1","_score":1,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}
+info: get query results:
+info: {"took":5,"timed_out":false,"_shards":{"total":3,"successful":3,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":0.2876821,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"1","_score":0.2876821,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}]}}
+info: [object Object]
+error: Elasticsearch cluster is down!
+info: Search Results:
+info: doc: {"_index":"tweets","_type":"_doc","_id":"zJCgmIkBHSnjRtQvE0bX","_score":1,"_source":{"id":1,"text":"If I fall, don't bring me back.","user":"jon","date":"2023-07-27T18:32:54.573Z"}}
+info: doc: {"_index":"tweets","_type":"_doc","_id":"zZCgmIkBHSnjRtQvE0bY","_score":1,"_source":{"id":2,"text":"Winter is coming","user":"ned","date":"2023-07-27T18:32:54.573Z"}}
+info: doc: {"_index":"tweets","_type":"_doc","_id":"zpCgmIkBHSnjRtQvE0bY","_score":1,"_source":{"id":3,"text":"A Lannister always pays his debts.","user":"tyrion","date":"2023-07-27T18:32:54.573Z"}}
+info: get query results:
+info: {"took":12,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":0.2876821,"hits":[{"_index":"new_index_js","_type":"_doc","_id":"1","_score":0.2876821,"_source":{"title":"ai","content":"1 hello world","news":"new vibes"}}]}}

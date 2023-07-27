@@ -5,7 +5,7 @@ def connect(logger):
     try:
         conn = psycopg2.connect(
             host="localhost",
-            port="5432",
+            port=5432,
             database="savings_finder",
             user="postgres",
             password="1234"
