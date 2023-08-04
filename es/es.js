@@ -1,6 +1,5 @@
 const { Client } = require('@elastic/elasticsearch')
-const winston = require('winston')
-const logger = require('./winston_logger.js');
+const logger = require('./logger.js');
 
 
 const client = new Client({
