@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 from random import choice
 import time
 
-from config_extract import (proxy_list, USER_AGENTS, COOKIE, 
-                            tori_url_1, tori_proxy_url_1, tori_url_tuuletin,
-                            giantti_url_1, giantti_url_ilmastointi)
+from config import (proxy_list, USER_AGENTS, COOKIE, 
+                            url_tori, url_tori_1, url_proxy_tori_1, url_tori_ilmastointi, url_tori_tuuletin,
+                            url_giantti, url_giantti_1, url_giantti_ilmastointi,)
 
 
 def extract(live, proxy, product, logger):
@@ -30,7 +30,7 @@ def extract(live, proxy, product, logger):
 
                 # -----TODO-----
                 # if tori
-                url = giantti_url_1 + product + tori_url_tuuletin
+                url = url_tori_1 + product + url_tori_tuuletin
                 logger.info('making request to: ' + url)
 
 
@@ -42,20 +42,21 @@ def extract(live, proxy, product, logger):
 
                     data_tori = {
                     "hostname": "www.tori.fi",
-                    "path": tori_proxy_url_1 + product + tori_url_tuuletin,
+                    "path": url_proxy_tori_1 + product + url_tori_tuuletin,
                     "method": "GET",
                     "port": "443",
                     "headers": headers,
                     }
 
-                    data = {
+                    data_gigantti = {
                     "hostname": "www.gigantti.fi",
-                    "path": giantti_url_1 + product + giantti_url_ilmastointi,
+                    "path": url_giantti_1 + product + url_giantti_ilmastointi,
                     "method": "GET",
                     "port": "443",
                     "headers": headers,
                     }
 
+                    data = data_tori
                     logger.info('proxy data: ' + str(data))
                     proxy = choice(proxy_list)
                     response = requests.post(proxy, json=data)

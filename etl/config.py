@@ -1,3 +1,30 @@
+
+url_tori = 'https://www.tori.fi/koko_suomi?q=ilmastointi&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th'
+url_tori_1 = 'https://www.tori.fi/koko_suomi?q='
+url_proxy_tori_1 = '/koko_suomi?q='
+
+
+url_tori_ilmastointi = '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th'
+url_tori_tuuletin = '&cg=3000&w=102&st=s&st=k&st=u&st=h&st=g&ca=18&l=0&md=th'
+
+
+url_gigantti = 'https://www.gigantti.fi/kodin-pienkoneet/siivous-ja-vaatehuolto'
+proxy_gigantti = '/kodin-pienkoneet/siivous-ja-vaatehuolto'
+# url_giantti = 'https://www.gigantti.fi/kodin-pienkoneet/ilmastointi-ja-lammitys/ilmastointi/ilmastointilaitteet?as_templateId=9539&gclid=CjwKCAjw44mlBhAQEiwAqP3eVrqsu-i5fTTAwCMdQalur56eS9Y2L7lvcJIOkLYWbpm_CI8qIXffbRoClngQAvD_BwE'
+url_giantti_1 = 'https://www.gigantti.fi/kodin-pienkoneet/ilmastointi-ja-lammitys/'
+url_giantti_ilmastointi = '/ilmastointilaitteet?as_templateId=9539&gclid=CjwKCAjw44mlBhAQEiwAqP3eVrqsu-i5fTTAwCMdQalur56eS9Y2L7lvcJIOkLYWbpm_CI8qIXffbRoClngQAvD_BwE'
+
+
+# products = ['tuuletin', 'ilmastointi', 'renkaat']
+products = ['ilmastointi']
+synonym = ['ilmastointilaite', 'ilmastointilaitteet', 'ilmastointilaitetta', 'ilmastointilaitteita', 'ilmastointilaitteiden', 'ilmastointilaitteeseen', 'ilmastointilaitteeseesi', 'ilmastointilaitteeseenne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteelta', 'ilmastointilaitteeltasi', 'ilmastointilaitteeltanne']
+# products = {
+#     'tuuletin': '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th',
+# }
+
+
+
+
 proxy_list = ["https://8wkthpru0k.execute-api.us-east-1.amazonaws.com/prod/Proxy", "https://2oqccuezdk.execute-api.us-east-1.amazonaws.com/prod/Proxy", "https://p3pjducm9h.execute-api.us-east-1.amazonaws.com/prod/Proxy"]
 
 USER_AGENTS = [
@@ -20,22 +47,3 @@ USER_AGENTS = [
 ]
 
 COOKIE="exp_pref=EUR; seen_uk=1"
-
-tori_url_1 = 'https://www.tori.fi/koko_suomi?q='
-tori_proxy_url_1 = '/koko_suomi?q='
-
-# products = ['tuuletin', 'ilmastointi', 'renkaat']
-products = ['ilmastointi']
-synonym = ['ilmastointilaite', 'ilmastointilaitteet', 'ilmastointilaitetta', 'ilmastointilaitteita', 'ilmastointilaitteiden', 'ilmastointilaitteeseen', 'ilmastointilaitteeseesi', 'ilmastointilaitteeseenne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteellesi', 'ilmastointilaitteellasi', 'ilmastointilaitteellanne', 'ilmastointilaitteelta', 'ilmastointilaitteeltasi', 'ilmastointilaitteeltanne']
-# products = {
-#     'tuuletin': '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th',
-# }
-# ------TODO------
-# urls for different categories
-tori_url_ilmastointi = '&cg=3010&w=102&st=s&st=k&st=u&st=h&st=g&c=0&ps=&pe=&ca=18&l=0&md=th'
-tori_url_tuuletin = '&cg=3000&w=102&st=s&st=k&st=u&st=h&st=g&ca=18&l=0&md=th'
-
-
-giantti_url = 'https://www.gigantti.fi/kodin-pienkoneet/ilmastointi-ja-lammitys/ilmastointi/ilmastointilaitteet?as_templateId=9539&gclid=CjwKCAjw44mlBhAQEiwAqP3eVrqsu-i5fTTAwCMdQalur56eS9Y2L7lvcJIOkLYWbpm_CI8qIXffbRoClngQAvD_BwE'
-giantti_url_1 = 'https://www.gigantti.fi/kodin-pienkoneet/ilmastointi-ja-lammitys/'
-giantti_url_ilmastointi = '/ilmastointilaitteet?as_templateId=9539&gclid=CjwKCAjw44mlBhAQEiwAqP3eVrqsu-i5fTTAwCMdQalur56eS9Y2L7lvcJIOkLYWbpm_CI8qIXffbRoClngQAvD_BwE'

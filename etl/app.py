@@ -2,7 +2,7 @@ import sys
 import argparse
 import logging
 
-from config_extract import products
+from config import products
 import extract, transform, load
 
 

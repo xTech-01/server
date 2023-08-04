@@ -1,34 +1,108 @@
 const puppeteer = require('puppeteer');
-const url_gigantti = require('./config').url_gigantti;
-const url_tori = require('./config').url_tori;
+const axios = require('axios');
+const fs = require('fs');
+
+const {
+    url_gigantti, 
+    url_tori,
+    url_prisma,
+    selector_gigantti,
+    selector_prisma,
+
+    proxy_list,
+    USER_AGENTS,
+    } = require('./config');
+
+const logger = require('./logger.js');
+
+const get_random = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+const proxy = get_random(proxy_list);
+const user_agent = get_random(USER_AGENTS);
+
+const proxy_request = async (url) => {
+
+    try {
+        logger.info('Making a request to ' + url);
+        logger.info('Using proxy: ' + proxy);
+        const response = await axios.get(url, {
+            // proxy: {
+            //     host: proxy,
+            //     port: 443,
+            //     protocol: 'https'
+            // },
+            headers: {
+                'User-Agent': user_agent,
+                // 'Cookie': COOKIE
+            }
+        });
+        logger.info(response)
+
+        if (response.status == 200) {
+            logger.info(response.data);
+            logger.info('Got data')
+            return response;
+        } else {
+            logger.error('Error occured @ making a request to ' + url + ':', response.status);
+        }
+        
+    }
+    catch (error) {
+        logger.error('Error occured @ making a request to ' + url + ':', error);
+    }
+}
+
+// proxy_request(url_prisma);
+
+
 
 (async () => {
-  try {
-    // Launch a headless browser
-    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false,
+        // args: [
+        //     '--proxy-server=' + proxy,
+        //     '--no-sandbox',
+        //     '--disable-setuid-sandbox',
+        //     '--disable-dev-shm-usage',
+        //     '--disable-accelerated-2d-canvas',
+        //     '--disable-gpu',
+        //     '--window-size=1920x1080',
+        // ]
+    });
 
     const page = await browser.newPage();
 
-    await page.goto(url_tori);
+    try {
+        logger.info('Making a request to ' + url_prisma);
+        await page.goto(url_gigantti);
+        // await page.goto(url_prisma);
+        
+        logger.info('40 sec timeout....................')
+        await new Promise(resolve => setTimeout(resolve, 40000)); 
+        await page.screenshot({ path: 'screenshot.png', fullPage: true });
+        logger.info('got screenshot')
 
-    // 30 second
-    await new Promise(resolve => setTimeout(resolve, 30000)); 
+        const htmlContent = await page.content();
+        // logger.info(htmlContent)
+        // fs.writeFileSync('prisma_output1.html', htmlContent);
+        fs.writeFileSync('gigantti_output.html', htmlContent);
+        logger.info('got html content')
 
-    await page.screenshot({ path: 'screenshot1.png', fullPage: true });
+        // const element = await page.$(selector_prisma)
+        // if (element) {
+        //     const element_content = await element.evaluate(ele => ele.textContent);
+        //     logger.info('Element:', type(element_content), element_content);
+        // } else {
+        //     logger.error('Error occured @ getting the element:', error);
+        // }
+    } catch (error) {
+        console.error('Error occured @ getting the screenshot + element:', error);
+    }
 
 
-    // const numbers = await page.evaluate(() => {
-
-    //     const element = document.querySelector('#products > elk-component-loader-wrapper > elk-product-and-content-listing-view > div.product-listproducts.ng-star-inserted > elk-product-tile-ff-wc-wrapper:nth-child(1) > elk-product-tile > div > div.product-tileinformation.information > elk-price > span > span'); 
-
-    //     return element ? element.textContent.trim() : null;
-
-    // });
-    // console.log('Numbers:', numbers);
-
-    // Close the browser
     await browser.close();
-  } catch (error) {
-    console.error('Error:', error);
-  }
 })();
+
