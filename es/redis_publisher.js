@@ -7,20 +7,21 @@ LPUSH es-test "{\"product\": \"imuri\"}"
 */
 
 
-async function run_redis() {
+async function run_redis(data_from_db, topic) {
 
-    const data = JSON.stringify({ product: 'iPhone', price: 599.99 });
-    // const data = '{\"product\": \"imuri\"}';
+
+    const data = JSON.stringify(data_from_db);
+
     logger.info(data)
 
     try {
         const redisClient = new Redis();
         logger.info('Connected to Redis successfully.');
 
-        await redisClient.lpush('es-test', data);
+        await redisClient.lpush(topic, data);
         logger.info('Lpushed data successfully.');
 
-        const result = await redisClient.lrange('es-test', 0, -1);
+        const result = await redisClient.lrange(topic, 0, -1);
         logger.info('Lranged data retrieved successfully.');
         logger.info(result);
 
@@ -30,4 +31,7 @@ async function run_redis() {
     }
 }
 
-run_redis();
+const data_from_db = { product: 'ilmastointilaite', price: 299.99 };
+const topic = 'es-redis';
+
+run_redis(data_from_db, topic);
