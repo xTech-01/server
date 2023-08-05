@@ -2,7 +2,7 @@
 
 require('array.prototype.flatmap').shim()
 const { Client } = require('@elastic/elasticsearch')
-const logger = require('./winston_logger.js');
+const logger = require('./logger.js');
 
 
 const client = new Client({

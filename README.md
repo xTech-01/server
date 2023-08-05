@@ -2,16 +2,28 @@
 
 ## server
 
-
-# npm pkg
-npm init
-npm install pg --save
-
 # run es:
 ```
     cd elasticsearch-7.17.11/
         bin/elasticsearch
 ```
+
+# run redis:
+```
+    brew services start redis
+        redis-cli ping
+            redis-cli
+                keys *
+                    LPUSH es-test "{\"product\": \"imuri\"}"
+                        LRANGE es-test 0 -1
+
+```
+
+# npm pkg
+npm init
+npm install pg --save
+
+
 # run api:
 ```
     curl -X GET "http://localhost:9200" -u "elastic:password"
